@@ -9,8 +9,12 @@ interface LikeButtonProps {
 export const LikeButton: React.FC<LikeButtonProps> = ({ isLiked, onClick }) => {
   return (
     <button onClick={onClick}>
-      {isLiked && <HeartIcon className="h-6 w-6 text-red-400" />}
-      {!isLiked && <HeartOutlineIcon className="h-6 w-6 text-red-400" />}
+      {isLiked && (
+        <HeartIcon className="h-6 w-6 text-red-400 transition-all hover:scale-110 active:scale-90" />
+      )}
+      {!isLiked && (
+        <HeartOutlineIcon className="h-6 w-6 text-red-400 transition-all hover:scale-110 active:scale-90" />
+      )}
     </button>
   );
 };
